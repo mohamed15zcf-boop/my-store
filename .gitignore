@@ -1,36 +1,32 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+import Link from 'next/link';
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*.local
-.env
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+export default function Home() {
+  return (
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(to bottom, #2563eb, #1e40af)',
+      color: 'white',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+      padding: '20px'
+    }}>
+      <h1 style={{ fontSize: '48px', marginBottom: '20px' }}>🛍️ متجري</h1>
+      <p style={{ fontSize: '24px', marginBottom: '30px' }}>أفضل المنتجات بأسعار رائعة</p>
+      
+      <Link href="/products" style={{
+        background: 'white',
+        color: '#2563eb',
+        padding: '15px 30px',
+        borderRadius: '8px',
+        fontSize: '18px',
+        fontWeight: 'bold',
+        textDecoration: 'none'
+      }}>
+        ابدأ التسوق
+      </Link>
+    </div>
+  );
+}
